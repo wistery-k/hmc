@@ -1,0 +1,8 @@
+simple higher order model checking.
+
+see http://www.kb.ecei.tohoku.ac.jp/~koba/papers/hmc.pdf Section4 for details.
+
+it takes exactly (k-1)-exptime to work, where k is the largest order of the given HORS.
+
+メモ:
+グローバル変数みたいに書きたくてfunctorにしてしまったけど、アレかも。特に意味はないです
