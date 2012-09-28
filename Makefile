@@ -3,13 +3,15 @@ OCAMLMKTOP = ocamlfind ocamlmktop
 
 OCAMLFLAGS = -package batteries -linkpkg -g
 
+SOURCES = mystd.ml tree.ml modelcheck.ml main.ml
+
 .PHONY: clean
 
-a.out: hmc.ml
-	$(OCAMLC) $(OCAMLFLAGS) -o a.out hmc.ml
+a.out: $(SOURCES)
+	$(OCAMLC) $(OCAMLFLAGS) -o a.out $(SOURCES)
 
-top: hmc.ml
-	$(OCAMLMKTOP) $(OCAMLFLAGS) -o top hmc.ml
+top: $(SOURCES)
+	$(OCAMLMKTOP) $(OCAMLFLAGS) -o top $(SOURCES)
 
 clean:
 	$(RM) *.cmo *.cmi a.out top
